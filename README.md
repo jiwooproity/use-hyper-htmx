@@ -3,7 +3,9 @@ Library : https://htmx.org/
 
 # 사용 방법
 CDN으로 라이브러리 연동 필요
+```
 <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+```
 
 # In HTML
 ```
