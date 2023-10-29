@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../style/shop.css" />
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+    <title>Shop</title>
+  </head>
+  <body>
+    <div class="shop-container">
+      <div class="shop-wrapper">
+        <div
+          class="shop-list"
+          hx-trigger="load"
+          hx-get="http://localhost:5500/item/list"
+          hx-swap="innerHTML"
+        ></div>
+      </div>
+    </div>
+    <script>
+      document.body.addEventListener("htmx:configRequest", function (event) {
+        event.detail.headers = "";
+        event.detail.headers["Content-Type"] =
+          "application/x-www-form-urlencoded; charset=UTF-8";
+      });
+    </script>
+  </body>
+</html>
